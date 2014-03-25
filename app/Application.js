@@ -1,15 +1,19 @@
 /// <reference path="~/ext/ext-all-debug.js" />
 Ext.define('LSInv.Application', {
     name: 'LSInv',
-
     extend: 'Ext.app.Application',
-
+    requires: [
+        'Ext.layout.*',
+        'Ext.form.*',
+        'Ext.menu.*'
+    ],
     views: [
-        // TODO: add views here
+        
     ],
 
     controllers: [
-        // TODO: add controllers here
+        'TranslationManager',
+        'Login'
     ],
 
     stores: [
@@ -25,6 +29,8 @@ Ext.define('LSInv.Application', {
     },
 
     launch: function () {
+        Ext.tip.QuickTipManager.init();
+
         var task = new Ext.util.DelayedTask(function () {
             //Fade out the body mask
             splashscreen.fadeOut({

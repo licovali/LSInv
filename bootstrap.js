@@ -8,7 +8,8 @@ Ext.Loader.addClassPathMappings({
   "Ext": "ext/src",
   "Ext.Msg": "ext/src/window/MessageBox.js",
   "ExtThemeNeptune": "ext/packages/ext-theme-neptune/overrides",
-  "LSInv": "app"
+  "LSInv": "app",
+  "LSInv.view.authentication.CapsLockTooltip": "app/view/authentication/CapsLockToolTip.js"
 });
 Ext.ClassManager.addNameAlternateMappings({
   "Ext.AbstractComponent": [],
@@ -856,10 +857,18 @@ Ext.ClassManager.addNameAlternateMappings({
   "ExtThemeNeptune.toolbar.Paging": [],
   "ExtThemeNeptune.toolbar.Toolbar": [],
   "LSInv.Application": [],
+  "LSInv.controller.Login": [],
   "LSInv.controller.Main": [],
+  "LSInv.controller.TranslationManager": [],
+  "LSInv.util.Alert": [],
+  "LSInv.util.MD5": [],
+  "LSInv.util.SessionMonitor": [],
+  "LSInv.util.Util": [],
   "LSInv.view.Login": [],
   "LSInv.view.Main": [],
-  "LSInv.view.Viewport": []
+  "LSInv.view.Translation": [],
+  "LSInv.view.Viewport": [],
+  "LSInv.view.authentication.CapsLockTooltip": []
 });
 Ext.ClassManager.addNameAliasMappings({
   "Ext.AbstractComponent": [],
@@ -1874,14 +1883,26 @@ Ext.ClassManager.addNameAliasMappings({
   "ExtThemeNeptune.toolbar.Paging": [],
   "ExtThemeNeptune.toolbar.Toolbar": [],
   "LSInv.Application": [],
+  "LSInv.controller.Login": [],
   "LSInv.controller.Main": [],
+  "LSInv.controller.TranslationManager": [],
+  "LSInv.util.Alert": [],
+  "LSInv.util.MD5": [],
+  "LSInv.util.SessionMonitor": [],
+  "LSInv.util.Util": [],
   "LSInv.view.Login": [
     "widget.login"
   ],
   "LSInv.view.Main": [
     "widget.app-main"
   ],
-  "LSInv.view.Viewport": []
+  "LSInv.view.Translation": [
+    "widget.translation"
+  ],
+  "LSInv.view.Viewport": [],
+  "LSInv.view.authentication.CapsLockTooltip": [
+    "widget.capslocktooltip"
+  ]
 });
 Ext.setVersion("ext-theme-base", "4.2.2");
 Ext.setVersion("ext-theme-neptune", "4.2.2");
