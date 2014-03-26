@@ -25,7 +25,7 @@ Ext.define('LSInv.Application', {
         splashscreen.addCls('splashscreen');
         Ext.DomHelper.insertFirst(Ext.query('.x-mask-msg')[0], {
             cls: 'x-splash-icon'
-        })
+        });
     },
 
     launch: function () {
@@ -51,6 +51,6 @@ Ext.define('LSInv.Application', {
         });
         
         task.delay(2000);
-        console.log('Welcome')
+        console.log('Welcome');
     }
 });
