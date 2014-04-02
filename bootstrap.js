@@ -864,6 +864,7 @@ Ext.ClassManager.addNameAlternateMappings({
   "LSInv.util.MD5": [],
   "LSInv.util.SessionMonitor": [],
   "LSInv.util.Util": [],
+  "LSInv.view.Header": [],
   "LSInv.view.Login": [],
   "LSInv.view.Main": [],
   "LSInv.view.Translation": [],
@@ -1890,6 +1891,9 @@ Ext.ClassManager.addNameAliasMappings({
   "LSInv.util.MD5": [],
   "LSInv.util.SessionMonitor": [],
   "LSInv.util.Util": [],
+  "LSInv.view.Header": [
+    "widget.appheader"
+  ],
   "LSInv.view.Login": [
     "widget.login"
   ],

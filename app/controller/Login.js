@@ -26,10 +26,10 @@ Ext.define('LSInv.controller.Login', {
                 click: this.onButtonClickCancel
             },
             'login form textfield': {
-                specialkey: this.onTextfielSpecialKey
+                specialkey: this.onTextfieldSpecialKey
             },
             'login form textfield[name=password]': {
-                keypress: this.onTextfielKeyPress
+                keypress: this.onTextfieldKeyPress
             }
         });
     },
@@ -41,18 +41,19 @@ Ext.define('LSInv.controller.Login', {
             pass = formPanel.down('textfield[name=password]').getValue();
         pass = LSInv.util.MD5.encode(pass);
         
-        
+        login.close();
+        Ext.create('LSInv.view.Viewport');
     },
     onButtonClickCancel: function (button, e, options) {
         button.up('form').getForm().reset();
     },
-    onTextfielSpecialKey: function (field, e, options) {
+    onTextfieldSpecialKey: function (field, e, options) {
         if (e.getKey() == e.ENTER) {
             var submitBtn = field.up('form').down('button#submit');
             submitBtn.fireEvent('click', submitBtn, e, options);
         }
     },
-    onTextfielKeyPress: function (field, e, options) {
+    onTextfieldKeyPress: function (field, e, options) {
         var charCode = e.getCharCode();
         
         if ((e.shiftKey && charCode >= 97 && charCode <= 122) ||

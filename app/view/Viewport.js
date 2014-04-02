@@ -1,15 +1,33 @@
+/// <reference path="~/ext/ext-all-debug.js" />
 Ext.define('LSInv.view.Viewport', {
     extend: 'Ext.container.Viewport',
     requires:[
-        'Ext.layout.container.Fit',
-        'LSInv.view.Main'
+        'LSInv.view.Header'
     ],
 
     layout: {
-        type: 'fit'
+        type: 'border'
     },
 
-    items: [{
-        xtype: 'app-main'
-    }]
+    items: [
+        {
+            xtype: 'container',
+            width: 190,
+            collapsible: true,
+            region: 'west'
+        },
+        {
+            xtype: 'appheader',
+            region: 'north'
+        },
+        {
+            xtype: 'container',
+            region: 'center'
+        },
+        {
+            xtype: 'container',
+            region: 'south',
+            heigth: 30
+        }
+    ]
 });
