@@ -13,7 +13,8 @@ Ext.define('LSInv.Application', {
 
     controllers: [
         'TranslationManager',
-        'Login'
+        'Login',
+        'Menu'
     ],
 
     stores: [

@@ -859,7 +859,11 @@ Ext.ClassManager.addNameAlternateMappings({
   "LSInv.Application": [],
   "LSInv.controller.Login": [],
   "LSInv.controller.Main": [],
+  "LSInv.controller.Menu": [],
   "LSInv.controller.TranslationManager": [],
+  "LSInv.model.menu.Item": [],
+  "LSInv.model.menu.Root": [],
+  "LSInv.store.Menu": [],
   "LSInv.util.Alert": [],
   "LSInv.util.MD5": [],
   "LSInv.util.SessionMonitor": [],
@@ -867,9 +871,12 @@ Ext.ClassManager.addNameAlternateMappings({
   "LSInv.view.Header": [],
   "LSInv.view.Login": [],
   "LSInv.view.Main": [],
+  "LSInv.view.MainPanel": [],
   "LSInv.view.Translation": [],
   "LSInv.view.Viewport": [],
-  "LSInv.view.authentication.CapsLockTooltip": []
+  "LSInv.view.authentication.CapsLockTooltip": [],
+  "LSInv.view.menu.Accordion": [],
+  "LSInv.view.menu.Item": []
 });
 Ext.ClassManager.addNameAliasMappings({
   "Ext.AbstractComponent": [],
@@ -1886,7 +1893,11 @@ Ext.ClassManager.addNameAliasMappings({
   "LSInv.Application": [],
   "LSInv.controller.Login": [],
   "LSInv.controller.Main": [],
+  "LSInv.controller.Menu": [],
   "LSInv.controller.TranslationManager": [],
+  "LSInv.model.menu.Item": [],
+  "LSInv.model.menu.Root": [],
+  "LSInv.store.Menu": [],
   "LSInv.util.Alert": [],
   "LSInv.util.MD5": [],
   "LSInv.util.SessionMonitor": [],
@@ -1900,12 +1911,21 @@ Ext.ClassManager.addNameAliasMappings({
   "LSInv.view.Main": [
     "widget.app-main"
   ],
+  "LSInv.view.MainPanel": [
+    "widget.mainpanel"
+  ],
   "LSInv.view.Translation": [
     "widget.translation"
   ],
   "LSInv.view.Viewport": [],
   "LSInv.view.authentication.CapsLockTooltip": [
     "widget.capslocktooltip"
+  ],
+  "LSInv.view.menu.Accordion": [
+    "widget.mainmenu"
+  ],
+  "LSInv.view.menu.Item": [
+    "widget.mainmenuitem"
   ]
 });
 Ext.setVersion("ext-theme-base", "4.2.2");

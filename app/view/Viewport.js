@@ -21,7 +21,7 @@ Ext.define('LSInv.view.Viewport', {
             region: 'north'
         },
         {
-            xtype: 'container',
+            xtype: 'mainpanel',
             region: 'center'
         },
         {
