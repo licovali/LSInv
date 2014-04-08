@@ -12,7 +12,7 @@ Ext.define('LSInv.view.Viewport', {
     items: [
         {
             xtype: 'container',
-            width: 190,
+            width: 200,
             collapsible: true,
             region: 'west'
         },
@@ -21,13 +21,13 @@ Ext.define('LSInv.view.Viewport', {
             region: 'north'
         },
         {
-            xtype: 'container',
+            xtype: 'tabpanel',
             region: 'center'
         },
         {
-            xtype: 'container',
+            xtype: 'statusbar',
             region: 'south',
-            heigth: 30
+            text: 'LICOVALI Solutions'
         }
     ]
 });
