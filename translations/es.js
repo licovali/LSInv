@@ -11,5 +11,7 @@ translations = {
 	capsLockMsg1: 'Tener el Bloq Mayús activado puede causar que introduzca',
 	capsLockMsg2: 'su contraseña de forma incorrecta.',
 	capsLockMsg3: 'Usted debe presionar Bloq Mayús para apagarlo antes de',
-	capsLockMsg4: 'escribir la contraseña.'
+	capsLockMsg4: 'escribir la contraseña.',
+
+    home: 'Inicio'
 }
