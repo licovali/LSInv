@@ -9,7 +9,7 @@ Ext.define('LSInv.store.Menu', {
     
     proxy: {
         type: 'ajax',
-        //url: 'php/menu.php',
+        url: 'php/menu.php',
         
         reader: {
             type: 'json',

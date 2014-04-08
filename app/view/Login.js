@@ -57,15 +57,15 @@ Ext.define('LSInv.view.Login', {
                         {
                             xtype: 'button',
                             itemId: 'cancel',
-                            iconCls: 'cancel',
-                            text: translations.cancel
+                            //iconCls: 'cancel',
+                            text: '<i class="fa fa-lock"></i> ' + translations.cancel
                         },
                         {
                             xtype: 'button',
                             itemId: 'submit',
                             formBind: true,
-                            iconCls: 'key-go',
-                            text: translations.submit
+                            //iconCls: 'key-go',
+                            text: '<i class="fa fa-unlock"></i> ' + translations.submit
                         }
                     ]
                 }

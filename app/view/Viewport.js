@@ -11,7 +11,7 @@ Ext.define('LSInv.view.Viewport', {
 
     items: [
         {
-            xtype: 'container',
+            xtype: 'mainmenu',
             width: 190,
             collapsible: true,
             region: 'west'
