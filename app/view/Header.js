@@ -8,7 +8,7 @@ Ext.define('LSInv.view.Header', {
     items: [
         {
             xtype: 'label', 
-            html: '<div id="titleHeader">LSInv<span style="font-size:12px;"> - v1.0.0</span></div>'
+            html: '<div id="titleHeader"><i class="fa fa-building-o"></i> LSInv<span style="font-size:12px;"> - v1.0.0</span></div>'
         },
         {
             xtype: 'tbfill'
@@ -18,9 +18,8 @@ Ext.define('LSInv.view.Header', {
         },
         {
             xtype: 'button',
-            text: 'Logout',
-            itemId: 'logout',
-            iconCls: 'logout'
+            text: '<i class="fa fa-sign-out"></i> ' + translations.logout,
+            itemId: 'logout'
         }
     ]
 });
