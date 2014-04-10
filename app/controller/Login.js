@@ -9,6 +9,7 @@ Ext.define('LSInv.controller.Login', {
     ],
     views: [
         'Login',
+        'Header',
         'authentication.CapsLockTooltip'
     ],
     refs: [
@@ -30,6 +31,9 @@ Ext.define('LSInv.controller.Login', {
             },
             'login form textfield[name=password]': {
                 keypress: this.onTextfieldKeyPress
+            },
+            'appheader button#logout': {
+                click: this.onButtonClickLogout
             }
         });
     },
@@ -42,7 +46,9 @@ Ext.define('LSInv.controller.Login', {
         pass = LSInv.util.MD5.encode(pass);
         
         login.close();
+
         Ext.create('LSInv.view.Viewport');
+        LSInv.util.SessionMonitor.start();
     },
     onButtonClickCancel: function (button, e, options) {
         button.up('form').getForm().reset();
@@ -71,5 +77,28 @@ Ext.define('LSInv.controller.Login', {
                 this.getCapslockTooltip().hide();
             }
         }
+    },
+    onButtonClickLogout: function (button, e, options) {
+
+        //Ext.Ajax.request({
+        //    url: 'http://localhost/masteringextjs/php/logout.php',
+        //    success: function (conn, response, options, eOpts) {
+
+        //        var result = LSInv.util.Util.decodeJSON(conn.responseText);
+
+        //        if (result.success) {
+
+        //            button.up('mainviewport').destroy();
+        //            window.location.reload();
+        //        } else {
+
+        //            LSInv.util.Util.showErrorMsg(conn.responseText);
+        //        }
+        //    },
+        //    failure: function (conn, response, options, eOpts) {
+
+        //        LSInv.util.Util.showErrorMsg(conn.responseText);
+        //    }
+        //});
     }
 });

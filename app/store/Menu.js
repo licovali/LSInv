@@ -8,8 +8,8 @@ Ext.define('LSInv.store.Menu', {
     model: 'LSInv.model.menu.Root',
     
     proxy: {
-        type: 'ajax',
-        url: 'php/menu.php',
+        type: 'rest',
+        url: '../WS/api/menu',
         
         reader: {
             type: 'json',

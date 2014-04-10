@@ -33,7 +33,7 @@ Ext.define('LSInv.controller.Menu', {
             Ext.each(records, function(root){
 
                 var menu = Ext.create('LSInv.view.menu.Item',{
-                    title: translations[root.get('text')],
+                    title: root.get('text'),
                     iconCls: root.get('iconCls')
                 });
 
@@ -42,7 +42,7 @@ Ext.define('LSInv.controller.Menu', {
                     Ext.each(itens.data.items, function(item){
 
                         menu.getRootNode().appendChild({
-                            text: translations[item.get('text')], 
+                            text: item.get('text'), 
                             leaf: true, 
                             iconCls: item.get('iconCls'),
                             id: item.get('id'),

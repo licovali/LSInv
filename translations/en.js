@@ -13,6 +13,6 @@ translations = {
 	capsLockMsg3: 'You should press Caps Lock to turn it off before entering',
 	capsLockMsg4: 'your password.',
 
-    home: 'Home'
-	
+    home: 'Home',
+	menu: 'Menu'
 }

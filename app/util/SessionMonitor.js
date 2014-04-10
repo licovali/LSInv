@@ -33,9 +33,9 @@
                 LSInv.util.SessionMonitor.window.hide();
                 LSInv.util.SessionMonitor.start();
                 // 'poke' the server-side to update your session.
-                Ext.Ajax.request({
-                    //url: 'user/poke.action'
-                });
+                //Ext.Ajax.request({
+                //    //url: 'user/poke.action'
+                //});
             }
         }, {
             text: 'Logout',

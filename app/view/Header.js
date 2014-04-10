@@ -14,6 +14,9 @@ Ext.define('LSInv.view.Header', {
             xtype: 'tbfill'
         },
         {
+            xtype: 'translation'
+        },
+        {
             xtype: 'tbseparator'
         },
         {
