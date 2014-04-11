@@ -9,7 +9,7 @@ Ext.define('LSInv.store.Menu', {
     
     proxy: {
         type: 'rest',
-        url: '../WS/api/menu',
+        url: LSInv.baseUrl + '/menu',
         
         reader: {
             type: 'json',

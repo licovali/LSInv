@@ -52,6 +52,9 @@ Ext.define('LSInv.Application', {
         });
         
         task.delay(2000);
+        LSInv.UserLogged = '';
+        LSInv.baseUrlToken = '../LSWA';
+        LSInv.baseUrl = '../LSWA/api';
         console.log('Welcome');
     }
 });

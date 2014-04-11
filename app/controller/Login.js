@@ -44,11 +44,29 @@ Ext.define('LSInv.controller.Login', {
             user = formPanel.down('textfield[name=user]').getValue(),
             pass = formPanel.down('textfield[name=password]').getValue();
         pass = LSInv.util.MD5.encode(pass);
-        
-        login.close();
+        console.log(pass);
 
-        Ext.create('LSInv.view.Viewport');
-        LSInv.util.SessionMonitor.start();
+        Ext.Ajax.request({
+            url: LSInv.baseUrlToken + '/Token',
+            method: 'POST',
+            params: {
+                grant_type: 'password',
+                username: user,
+                password: pass
+            },
+            success: function (response, opts) {
+                var obj = Ext.decode(response.responseText);
+                LSInv.UserLogged = obj;
+                login.close();
+                Ext.create('LSInv.view.Viewport');
+                LSInv.util.SessionMonitor.start();
+            },
+            failure: function (response, opts) {
+                var obj = Ext.decode(response.responseText)
+                LSInv.util.Util.showErrorMsg(obj.error_description);
+            }
+        });
+        
     },
     onButtonClickCancel: function (button, e, options) {
         button.up('form').getForm().reset();
@@ -80,25 +98,20 @@ Ext.define('LSInv.controller.Login', {
     },
     onButtonClickLogout: function (button, e, options) {
 
-        //Ext.Ajax.request({
-        //    url: 'http://localhost/masteringextjs/php/logout.php',
-        //    success: function (conn, response, options, eOpts) {
-
-        //        var result = LSInv.util.Util.decodeJSON(conn.responseText);
-
-        //        if (result.success) {
-
-        //            button.up('mainviewport').destroy();
-        //            window.location.reload();
-        //        } else {
-
-        //            LSInv.util.Util.showErrorMsg(conn.responseText);
-        //        }
-        //    },
-        //    failure: function (conn, response, options, eOpts) {
-
-        //        LSInv.util.Util.showErrorMsg(conn.responseText);
-        //    }
-        //});
+        Ext.Ajax.request({
+            url: LSInv.baseUrl + '/Account/Logout',
+            headers: {
+                'Content-Type': 'application/json',
+                'Authorization': 'Bearer ' + LSInv.UserLogged.access_token
+            },
+            method: 'POST',
+            success: function (response, eOpts) {
+                button.up('viewport').destroy();
+                window.location.reload();
+            },
+            failure: function (response, eOpts) {
+                LSInv.util.Util.showErrorMsg(response.responseText);
+            }
+        });
     }
 });
