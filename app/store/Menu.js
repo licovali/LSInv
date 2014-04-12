@@ -6,11 +6,9 @@ Ext.define('LSInv.store.Menu', {
     ],
 
     model: 'LSInv.model.menu.Root',
-    
     proxy: {
         type: 'rest',
-        url: LSInv.baseUrl + '/menu',
-        
+        url: '../LSWA/api/menu',
         reader: {
             type: 'json',
             root: 'items'
