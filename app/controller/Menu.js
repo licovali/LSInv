@@ -1,3 +1,4 @@
+/// <reference path="~/ext/ext-all-debug.js" />
 Ext.define('LSInv.controller.Menu', {
     extend: 'Ext.app.Controller',
 
@@ -25,7 +26,30 @@ Ext.define('LSInv.controller.Menu', {
         }
     ],
 
-    onPanelRender: function(abstractcomponent, options) {
+    onPanelRender: function (abstractcomponent, options) {
+        this.getMenuStore().setProxy({
+            type: 'ajax',
+            url: '../LSWA/api/menu',
+            reader: {
+                type: 'json',
+                root: 'items'
+            },
+            headers: {
+                'Content-Type': 'application/json',
+                'Authorization': 'Bearer ' + LSInv.UserLogged.access_token
+            },
+            listeners: {
+                exception: function (proxy, response, operation) {
+                    Ext.MessageBox.show({
+                        title: 'REMOTE EXCEPTION',
+                        msg: operation.getError(),
+                        icon: Ext.MessageBox.ERROR,
+                        buttons: Ext.Msg.OK
+                    });
+                }
+            }
+        });
+        
         this.getMenuStore().load(function(records, op, success){
 
             var menuPanel = Ext.ComponentQuery.query('mainmenu')[0];
