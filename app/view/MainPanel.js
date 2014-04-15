@@ -12,8 +12,8 @@ Ext.define('LSInv.view.MainPanel', {
         {
             xtype: 'panel',
             closable: false,
-            iconCls: 'home',
-            title: translations.home,
+            //iconCls: 'home',
+            title: '<i class="fa fa-home"></i> ' + translations.home,
             layout: 'fit'
             //items: [{
             //    xtype: 'uxiframe',
