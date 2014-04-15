@@ -26,8 +26,9 @@ Ext.define('LSInv.view.Viewport', {
         },
         {
             xtype: 'statusbar',
+            border: 1,
             region: 'south',
-            text: 'LICOVALI Solutions'
+            text: '<i class="fa fa-cog fa-spin"></i>' +' LICOVALI Solutions'
         }
     ]
 });

@@ -45,7 +45,7 @@ Ext.define('LSInv.controller.Login', {
             pass = formPanel.down('textfield[name=password]').getValue();
         pass = LSInv.util.MD5.encode(pass);
         //console.log(pass);
-
+        Ext.get(login.getEl()).mask("Authenticating... Please wait...",'loading');
         Ext.Ajax.request({
             url: LSInv.baseUrlToken + '/Token',
             method: 'POST',
@@ -55,6 +55,7 @@ Ext.define('LSInv.controller.Login', {
                 password: pass
             },
             success: function (response, opts) {
+                Ext.get(login.getEl()).unmask();
                 var obj = Ext.decode(response.responseText);
                 LSInv.UserLogged = obj;
                 login.close();
@@ -62,6 +63,7 @@ Ext.define('LSInv.controller.Login', {
                 LSInv.util.SessionMonitor.start();
             },
             failure: function (response, opts) {
+                Ext.get(login.getEl()).unmask();
                 LSInv.util.Util.showErrorMsg(response.statusText);
             }
         });

@@ -25,7 +25,6 @@ Ext.define('LSInv.view.Login', {
                 anchor: '100%',
                 labelWidth: 60,
                 allowBlank: false,
-                //vtype: 'alphanum',
                 minLength: 3
             },
             items: [
@@ -40,7 +39,6 @@ Ext.define('LSInv.view.Login', {
                     fieldLabel: translations.password,
                     enableKeyEvents: true,
                     id: 'password'
-                    //vtype: 'customPass',
                 }
             ],
             dockedItems: [
@@ -57,14 +55,12 @@ Ext.define('LSInv.view.Login', {
                         {
                             xtype: 'button',
                             itemId: 'cancel',
-                            //iconCls: 'cancel',
                             text: '<i class="fa fa-lock"></i> ' + translations.cancel
                         },
                         {
                             xtype: 'button',
                             itemId: 'submit',
                             formBind: true,
-                            //iconCls: 'key-go',
                             text: '<i class="fa fa-unlock"></i> ' + translations.submit
                         }
                     ]

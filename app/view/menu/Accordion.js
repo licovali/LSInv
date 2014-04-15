@@ -8,9 +8,9 @@ Ext.define('LSInv.view.menu.Accordion', {
         pack: 'start'
     },
     frame: true,
+    border: 1,
     multi: true,
     collapsible: false,
     hideCollapseTool: false,
-    iconCls: 'sitemap',
-    title: translations.menu
+    title: '<i class="fa fa-sitemap"></i> ' + translations.menu
 });
